@@ -12,30 +12,19 @@ import java.util.Scanner;
 public class program11 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Read the input number as a string
         String inputNumber = scanner.nextLine();
         int sumOfNonPrimeDigits = 0;
-
-        // Iterate through each character in the string
         for (char ch : inputNumber.toCharArray()) {
             int digit = Character.getNumericValue(ch);
-
-            // Check if the digit is non-prime
             if (isNonPrime(digit)) {
                 sumOfNonPrimeDigits += digit;
             }
         }
-
-        // Output the sum of non-prime digits
         System.out.println(sumOfNonPrimeDigits);
 
         scanner.close();
     }
-
-    // Function to check if a digit is non-prime
     private static boolean isNonPrime(int digit) {
-        // Non-prime digits are 0, 1, 4, 6, 8, 9
         return digit == 0 || digit == 1 || digit == 4 || digit == 6 || digit == 8 || digit == 9;
     }
 }
